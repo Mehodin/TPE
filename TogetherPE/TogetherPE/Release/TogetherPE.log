@@ -1,0 +1,190 @@
+﻿  Uic'ing TogetherPE.ui...
+  moc_TogetherPE.cpp
+  TogetherPE.cpp
+  main.cpp
+  packetLogger.cpp
+tins.lib(ip_address.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(ip_address.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(network_interface.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(network_interface.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(sniffer.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(sniffer.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(address_range.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(address_range.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(ipv6_address.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(ipv6_address.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(routing_utils.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(routing_utils.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(timestamp.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(timestamp.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(dot11_base.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(dot11_base.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(ethernetII.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(ethernetII.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(radiotap.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(radiotap.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(loopback.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(loopback.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(rawpdu.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(rawpdu.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(dot3.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(dot3.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(sll.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(sll.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(ppi.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(ppi.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(ip.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(ip.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(ipv6.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(ipv6.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(address_helpers.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(address_helpers.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(pdu.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(pdu.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(hw_address.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(hw_address.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(dot11_data.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(dot11_data.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(dot11_beacon.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(dot11_beacon.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(dot11_assoc.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(dot11_assoc.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(dot11_auth.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(dot11_auth.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(dot11_probe.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(dot11_probe.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(dot11_control.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(dot11_control.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(packet_sender.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(packet_sender.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(pdu_helpers.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(pdu_helpers.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(pdu_option.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(pdu_option.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(checksum_utils.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(checksum_utils.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(radiotap_parser.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(radiotap_parser.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(radiotap_writer.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(radiotap_writer.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(llc.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(llc.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(memory_helpers.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(memory_helpers.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(snap.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(snap.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(dot11_mgmt.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(dot11_mgmt.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(tcp.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(tcp.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(udp.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(udp.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(ipsec.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(ipsec.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(icmp.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(icmp.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(icmpv6.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(icmpv6.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(mpls.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(mpls.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(arp.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(arp.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(eapol.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(eapol.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(dot1q.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(dot1q.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(pppoe.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(pppoe.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(stp.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(stp.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(rsn_information.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(rsn_information.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(icmp_extension.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(icmp_extension.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+tins.lib(icmp_extension_helpers.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+tins.lib(icmp_extension_helpers.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+qtmaind.lib(qtmain_win.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in main.obj
+qtmaind.lib(qtmain_win.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in main.obj
+LINK : warning LNK4098: defaultlib 'MSVCRTD' conflicts with use of other libs; use /NODEFAULTLIB:library
+tins.lib(pppoe.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(rsn_information.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(icmp_extension.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(icmp_extension_helpers.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(icmp.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(icmpv6.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(mpls.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(eapol.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(memory_helpers.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(dot11_mgmt.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(tcp.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(ipsec.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(pdu_option.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(radiotap_parser.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(radiotap_writer.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(llc.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(dot11_probe.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(dot11_control.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(packet_sender.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(pdu_helpers.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(dot11_data.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(dot11_beacon.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(dot11_assoc.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(dot11_auth.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(ip.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(ipv6.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(pdu.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(hw_address.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(radiotap.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(rawpdu.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(dot3.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(ppi.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(ipv6_address.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(routing_utils.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(dot11_base.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(ethernetII.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(ip_address.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(network_interface.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(sniffer.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(address_range.obj) : error LNK2001: unresolved external symbol __imp___invalid_parameter
+tins.lib(pppoe.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(rsn_information.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(icmp_extension.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(icmp_extension_helpers.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(icmp.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(icmpv6.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(mpls.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(eapol.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(memory_helpers.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(dot11_mgmt.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(tcp.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(ipsec.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(pdu_option.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(radiotap_parser.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(radiotap_writer.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(llc.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(dot11_probe.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(dot11_control.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(packet_sender.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(pdu_helpers.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(dot11_data.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(dot11_beacon.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(dot11_assoc.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(dot11_auth.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(ip.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(ipv6.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(pdu.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(hw_address.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(radiotap.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(rawpdu.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(dot3.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(ppi.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(ipv6_address.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(routing_utils.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(dot11_base.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(ethernetII.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(ip_address.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(network_interface.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(sniffer.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(address_range.obj) : error LNK2001: unresolved external symbol __imp___CrtDbgReport
+tins.lib(hw_address.obj) : error LNK2019: unresolved external symbol __imp___calloc_dbg referenced in function "char * __cdecl std::_Maklocstr<char>(char const *,char *,struct _Cvtvec const &)" (??$_Maklocstr@D@std@@YAPADPBDPADABU_Cvtvec@@@Z)
+C:\Users\John_\Documents\GitHub\TPE\TogetherPE\Win32\Release\\TogetherPE.exe : fatal error LNK1120: 3 unresolved externals

@@ -1,10 +1,13 @@
 #pragma once
 #include <QtWidgets/QMainWindow>
+#include <QStandardItemModel>
 #include <QThread>
 #include "ui_TogetherPE.h"
 
 class PacketLogger;
 class PacketObject;
+
+class QTimer;
 
 class TogetherPE : public QMainWindow
 {
@@ -24,13 +27,19 @@ public:
 	}
 
 	void log(const std::string s);
+	void stopPackets();
 
 private slots:
 	void startLogging();
 	void logText(const QString&);
 	void incomingPacket(PacketObject* p);
+
+signals:
+	void stopSniffing();
+
 private:
 	void resizeEvent(QResizeEvent*) override;
+	QStandardItemModel* tableModel = new QStandardItemModel;;
 
 private:
 	Ui::TogetherPEClass ui;

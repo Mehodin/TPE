@@ -16,6 +16,7 @@ class PacketLogger : public QThread {
 public:
 	PacketLogger(TogetherPE*);
 	bool logPacket(const PDU&);
+	Sniffer* getSniffer();
 
 
 signals:
@@ -24,8 +25,10 @@ signals:
 
 public slots:
 	void process();
+	void stopLogging();
 
 private:
+	std::unique_ptr<Sniffer> snf = nullptr;
 	TogetherPE* t;
 	int columnCount = 0;
 };

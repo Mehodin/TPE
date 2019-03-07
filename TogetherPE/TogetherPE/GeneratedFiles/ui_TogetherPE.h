@@ -13,13 +13,15 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
-#include <QtWidgets/QTableWidget>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -32,12 +34,17 @@ public:
     QTabWidget *tabWidget;
     QWidget *packetTab;
     QGridLayout *gridLayout_2;
+    QLabel *outgoingLabel;
+    QLabel *incomingLabel;
+    QTableView *packetTable;
+    QSpacerItem *horizontalSpacer;
     QPushButton *startButton;
-    QTableWidget *packetTable;
+    QPushButton *stopButton;
     QWidget *settingTab;
     QWidget *logTab;
     QGridLayout *gridLayout_3;
     QPlainTextEdit *logEdit;
+    QWidget *tab;
     QStatusBar *statusBar;
     QMenuBar *menuBar;
 
@@ -60,12 +67,19 @@ public:
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        startButton = new QPushButton(packetTab);
-        startButton->setObjectName(QString::fromUtf8("startButton"));
+        outgoingLabel = new QLabel(packetTab);
+        outgoingLabel->setObjectName(QString::fromUtf8("outgoingLabel"));
+        outgoingLabel->setTextFormat(Qt::AutoText);
+        outgoingLabel->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
-        gridLayout_2->addWidget(startButton, 1, 0, 1, 1);
+        gridLayout_2->addWidget(outgoingLabel, 3, 1, 1, 1);
 
-        packetTable = new QTableWidget(packetTab);
+        incomingLabel = new QLabel(packetTab);
+        incomingLabel->setObjectName(QString::fromUtf8("incomingLabel"));
+
+        gridLayout_2->addWidget(incomingLabel, 3, 0, 1, 1);
+
+        packetTable = new QTableView(packetTab);
         packetTable->setObjectName(QString::fromUtf8("packetTable"));
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
@@ -73,11 +87,26 @@ public:
         sizePolicy.setHeightForWidth(packetTable->sizePolicy().hasHeightForWidth());
         packetTable->setSizePolicy(sizePolicy);
         packetTable->setLayoutDirection(Qt::LeftToRight);
+        packetTable->setAutoFillBackground(false);
         packetTable->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
         packetTable->setSelectionMode(QAbstractItemView::ContiguousSelection);
         packetTable->setWordWrap(false);
 
-        gridLayout_2->addWidget(packetTable, 0, 0, 1, 1);
+        gridLayout_2->addWidget(packetTable, 0, 0, 1, 4);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_2->addItem(horizontalSpacer, 3, 2, 1, 2);
+
+        startButton = new QPushButton(packetTab);
+        startButton->setObjectName(QString::fromUtf8("startButton"));
+
+        gridLayout_2->addWidget(startButton, 1, 0, 1, 2);
+
+        stopButton = new QPushButton(packetTab);
+        stopButton->setObjectName(QString::fromUtf8("stopButton"));
+
+        gridLayout_2->addWidget(stopButton, 1, 2, 1, 2);
 
         tabWidget->addTab(packetTab, QString());
         settingTab = new QWidget();
@@ -91,10 +120,14 @@ public:
         gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
         logEdit = new QPlainTextEdit(logTab);
         logEdit->setObjectName(QString::fromUtf8("logEdit"));
+        logEdit->setReadOnly(true);
 
         gridLayout_3->addWidget(logEdit, 0, 0, 1, 1);
 
         tabWidget->addTab(logTab, QString());
+        tab = new QWidget();
+        tab->setObjectName(QString::fromUtf8("tab"));
+        tabWidget->addTab(tab, QString());
 
         gridLayout->addWidget(tabWidget, 0, 0, 1, 1);
 
@@ -119,10 +152,14 @@ public:
     void retranslateUi(QMainWindow *TogetherPEClass)
     {
         TogetherPEClass->setWindowTitle(QApplication::translate("TogetherPEClass", "TogetherPE", nullptr));
+        outgoingLabel->setText(QApplication::translate("TogetherPEClass", "Outgoing: blue", nullptr));
+        incomingLabel->setText(QApplication::translate("TogetherPEClass", "Incoming: red", nullptr));
         startButton->setText(QApplication::translate("TogetherPEClass", "Start", nullptr));
+        stopButton->setText(QApplication::translate("TogetherPEClass", "Stop", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(packetTab), QApplication::translate("TogetherPEClass", "Packet Tab", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(settingTab), QApplication::translate("TogetherPEClass", "Setting Tab", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(logTab), QApplication::translate("TogetherPEClass", "Logs", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("TogetherPEClass", "Scripter", nullptr));
     } // retranslateUi
 
 };

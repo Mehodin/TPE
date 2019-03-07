@@ -6,6 +6,10 @@
 
 #include <QStandardItemModel>
 #include <QTableView>
+#include <QTimer>
+
+#include "pybind11/pybind11.h"
+
 #include <Packet.h>
 
 using namespace Tins;
@@ -14,6 +18,7 @@ TogetherPE::TogetherPE(QWidget *parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
+	connect(this, &TogetherPE::closeEvent, this, [this]() { stopPackets(); sniffingThread->wait(); packetSniffer->wait(); qApp->quit(); });
 }
 
 void TogetherPE::log(std::string s) {
@@ -21,17 +26,27 @@ void TogetherPE::log(std::string s) {
 }
 
 void TogetherPE::startLogging() {
-	QStringList headerTitles = { "Direction", "IP", "Data" };
-	ui.packetTable->setColumnCount(headerTitles.size());
-	ui.packetTable->setHorizontalHeaderLabels(headerTitles);
-	//ui.packetTable->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+	QStringList headerTitles = { "IP", "Data" };
+	tableModel->clear();
+	tableModel->setHorizontalHeaderLabels(headerTitles);
+	ui.packetTable->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+	ui.packetTable->setModel(tableModel);
 	packetSniffer = new PacketLogger(this);
-	sniffingThread = new QThread;
+	sniffingThread = new QThread(this);
 	packetSniffer->moveToThread(sniffingThread);
 	connect(sniffingThread, &QThread::started, packetSniffer, &PacketLogger::process);
 	connect(packetSniffer, &PacketLogger::attemptLog, this, &TogetherPE::logText);
 	connect(packetSniffer, &PacketLogger::incomingPacket, this, &TogetherPE::incomingPacket);
+	connect(ui.stopButton, &QPushButton::clicked, this, &TogetherPE::stopPackets);
+	ui.packetTable->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
 	sniffingThread->start();
+}
+void TogetherPE::stopPackets() {
+	packetSniffer->getSniffer()->stop_sniff();
+	packetSniffer->requestInterruption();
+	sniffingThread->requestInterruption();
+	packetSniffer->terminate();
+	sniffingThread->terminate();
 }
 
 void TogetherPE::logText(const QString& s) {
@@ -39,21 +54,18 @@ void TogetherPE::logText(const QString& s) {
 }
 
 void TogetherPE::incomingPacket(PacketObject* p) {
-	QList<QTableWidgetItem*> items = {
-		new QTableWidgetItem(p->isIncoming() ? "<-- IN" : "OUT -->"),
-		new QTableWidgetItem(p->getAddress()),
-		new QTableWidgetItem(p->getPacketData())
+	QList<QStandardItem *> items = {
+		new QStandardItem(p->getAddress()),
+		new QStandardItem(p->getPacketData())
 	};
 
-	ui.packetTable->insertRow(ui.packetTable->rowCount());
-
 	for (int i = 0; i < items.size(); i++) {
-		ui.packetTable->setItem(ui.packetTable->rowCount() - 1, i, items[i]);
+		if (p->isIncoming()) items[i]->setForeground(QColor::fromRgb(255, 0, 0));
+		else items[i]->setForeground(QColor::fromRgb(0, 0, 255));
 	}
+	tableModel->appendRow(items);
 }
 
 void TogetherPE::resizeEvent(QResizeEvent* event) {
 	QMainWindow::resizeEvent(event);
-	ui.packetTable->horizontalHeader()->resizeSections(QHeaderView::ResizeToContents);
-
 }
