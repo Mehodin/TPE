@@ -31,3 +31,9 @@
 *.out
 *.app
 *.ipch
+*.db
+*.opendb
+TogetherPE/.vs/TogetherPE/v15/Solution.VC.db
+*.log
+*.tlog
+*.tlog

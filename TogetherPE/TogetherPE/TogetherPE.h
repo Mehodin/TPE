@@ -22,13 +22,14 @@ public:
 	}
 
 	template <typename T>
-	void log(T&& s) {
-		ui.logEdit->appendPlainText(std::forward<T>(s));
+	void log(T s) {
+		ui.logEdit->appendPlainText(QString::fromStdString(getDateTimeFormatted()) + s);
 	}
 
 	void log(const std::string s);
 	void stopPackets();
 
+	Ui::TogetherPEClass ui;
 private slots:
 	void startLogging();
 	void logText(const QString&);
@@ -39,10 +40,10 @@ signals:
 
 private:
 	void resizeEvent(QResizeEvent*) override;
-	QStandardItemModel* tableModel = new QStandardItemModel;;
+	std::string getDateTimeFormatted();
 
-private:
-	Ui::TogetherPEClass ui;
+	bool running = false;
+	QStandardItemModel* tableModel = new QStandardItemModel;;
 	PacketLogger* packetSniffer;
 	QThread* sniffingThread;
 };

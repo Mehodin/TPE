@@ -16,6 +16,7 @@ class PacketLogger : public QThread {
 public:
 	PacketLogger(TogetherPE*);
 	bool logPacket(const PDU&);
+	bool parseFilterString(PacketObject*);
 	Sniffer* getSniffer();
 
 

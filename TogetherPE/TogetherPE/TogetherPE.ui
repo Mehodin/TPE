@@ -103,6 +103,122 @@
        <attribute name="title">
         <string>Setting Tab</string>
        </attribute>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="groupBox">
+          <property name="title">
+           <string>Filters</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_5">
+           <item row="2" column="0">
+            <widget class="QCheckBox" name="ipCheckbox">
+             <property name="text">
+              <string>Filter by IP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="2">
+            <widget class="QSpinBox" name="minimumSizeSpinbox"/>
+           </item>
+           <item row="4" column="0">
+            <widget class="QCheckBox" name="minimumSizeCheckbox">
+             <property name="text">
+              <string>Minimum size</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="2">
+            <widget class="QSpinBox" name="maximumSizeSpinbox"/>
+           </item>
+           <item row="0" column="0">
+            <widget class="QCheckBox" name="outgoingCheckbox">
+             <property name="text">
+              <string>Outgoing</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="2">
+            <widget class="QPlainTextEdit" name="exampleFilter">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+             <property name="plainText">
+              <string>outgoing(=1) incoming(=1) ip(=104.16.59.37) port(=80,8080,59) size(=0, 99999)
+
+Explanation:
+outgoing packets, yes.
+incoming packets, yes
+coming / going to ip 104.16...
+only when port 80, 8080 or 59
+size ranging from 0, 99999</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QCheckBox" name="incomingCheckbox">
+             <property name="text">
+              <string>Incoming</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="QLineEdit" name="ipLineEdit">
+             <property name="text">
+              <string>Address</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="2">
+            <widget class="QPlainTextEdit" name="customFilterEdit">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="plainText">
+              <string>outgoing(=1) incoming(=1) ip(=104.16.59.37) port(=80,8080,59) size(=0, 99999)
+</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="2">
+            <widget class="QLineEdit" name="portLineEdit">
+             <property name="text">
+              <string>Port</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QCheckBox" name="maximumSizeCheckbox">
+             <property name="text">
+              <string>Maximum size</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QCheckBox" name="portCheckbox">
+             <property name="text">
+              <string>Recieving port</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0">
+            <widget class="QCheckBox" name="customFilterCheckbox">
+             <property name="text">
+              <string>Custom Filters</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="0">
+            <widget class="QLabel" name="exampleFilterLabel">
+             <property name="text">
+              <string>Example Custom
+Filter</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="logTab">
        <attribute name="title">

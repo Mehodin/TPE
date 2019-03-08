@@ -6,10 +6,11 @@
 #include "Packet.h"
 
 
-PacketObject::PacketObject(bool incoming, QString ip, QString data) {
+PacketObject::PacketObject(bool incoming, QString ip, QString data, std::unique_ptr<Tins::RawPDU> rawPDU) {
 	this->incoming = incoming;
 	this->address = ip;
 	this->packetData = data;
+	this->rawPDU = std::move(rawPDU);
 }
 
 PacketObject* PacketObject::fromRawPdu(const Tins::PDU& pdu) {
@@ -22,7 +23,7 @@ PacketObject* PacketObject::fromRawPdu(const Tins::PDU& pdu) {
 	for (auto each : raw.payload()) {
 		packetData << std::setfill('0') << std::setw(2) << std::hex << static_cast<int>(each) << " ";
 	}
-	return new PacketObject{ inc, ipAddress, packetData.str().c_str() };
+	return new PacketObject{ inc, ipAddress, packetData.str().c_str(), std::make_unique<Tins::RawPDU>(raw) };
 }
 
 bool PacketObject::isIncoming() {
@@ -35,4 +36,8 @@ QString PacketObject::getAddress() {
 
 QString PacketObject::getPacketData() {
 	return packetData.toUpper();
+}
+
+Tins::RawPDU* PacketObject::getRawData() {
+	return rawPDU.get();
 }

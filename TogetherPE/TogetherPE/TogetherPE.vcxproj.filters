@@ -67,9 +67,4 @@
   <ItemGroup>
     <ResourceCompile Include="TogetherPE.rc" />
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="thread_call.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
 </Project>

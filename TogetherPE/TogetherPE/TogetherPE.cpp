@@ -2,13 +2,12 @@
 #include "packetLogger.h"
 
 #include <iostream>
+#include <ctime>
 #include <tins/tins.h>
 
 #include <QStandardItemModel>
 #include <QTableView>
 #include <QTimer>
-
-#include "pybind11/pybind11.h"
 
 #include <Packet.h>
 
@@ -26,6 +25,10 @@ void TogetherPE::log(std::string s) {
 }
 
 void TogetherPE::startLogging() {
+	if (running) {
+		log("Already running");
+		return;
+	}
 	QStringList headerTitles = { "IP", "Data" };
 	tableModel->clear();
 	tableModel->setHorizontalHeaderLabels(headerTitles);
@@ -40,6 +43,7 @@ void TogetherPE::startLogging() {
 	connect(ui.stopButton, &QPushButton::clicked, this, &TogetherPE::stopPackets);
 	ui.packetTable->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
 	sniffingThread->start();
+	running = true;
 }
 void TogetherPE::stopPackets() {
 	packetSniffer->getSniffer()->stop_sniff();
@@ -47,6 +51,7 @@ void TogetherPE::stopPackets() {
 	sniffingThread->requestInterruption();
 	packetSniffer->terminate();
 	sniffingThread->terminate();
+	running = false;
 }
 
 void TogetherPE::logText(const QString& s) {
@@ -68,4 +73,13 @@ void TogetherPE::incomingPacket(PacketObject* p) {
 
 void TogetherPE::resizeEvent(QResizeEvent* event) {
 	QMainWindow::resizeEvent(event);
+}
+
+
+std::string TogetherPE::getDateTimeFormatted() {
+	time_t     now = time(0);
+	struct tm  tstruct = *localtime(&now);
+	char       buf[80];
+	strftime(buf, sizeof(buf), "[%Y-%m-%d %X] ", &tstruct);
+	return buf;
 }
