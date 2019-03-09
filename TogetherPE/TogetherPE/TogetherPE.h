@@ -17,16 +17,17 @@ public:
 
 	template <typename T>
 	TogetherPE& operator<<(T&& s) {
-		log(s);
+		log(std::forward<T>(s));
 		return (*this);
 	}
 
 	template <typename T>
-	void log(T s) {
-		ui.logEdit->appendPlainText(QString::fromStdString(getDateTimeFormatted()) + s);
+	void log(T&& s) {
+		ui.logEdit->appendPlainText(QString::fromStdString(getDateTimeFormatted()) + std::forward<T>(s));
 	}
 
-	void log(const std::string s);
+
+	void log(const std::string& s);
 	void stopPackets();
 
 	Ui::TogetherPEClass ui;

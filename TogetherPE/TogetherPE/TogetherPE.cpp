@@ -20,7 +20,7 @@ TogetherPE::TogetherPE(QWidget *parent)
 	connect(this, &TogetherPE::closeEvent, this, [this]() { stopPackets(); sniffingThread->wait(); packetSniffer->wait(); qApp->quit(); });
 }
 
-void TogetherPE::log(std::string s) {
+void TogetherPE::log(const std::string& s) {
 	this->log(QString::fromStdString(s));
 }
 
@@ -63,10 +63,13 @@ void TogetherPE::incomingPacket(PacketObject* p) {
 		new QStandardItem(p->getAddress()),
 		new QStandardItem(p->getPacketData())
 	};
+	p->getPacketData();
 
-	for (int i = 0; i < items.size(); i++) {
-		if (p->isIncoming()) items[i]->setForeground(QColor::fromRgb(255, 0, 0));
-		else items[i]->setForeground(QColor::fromRgb(0, 0, 255));
+	QColor color;
+	for (auto* item : items) {
+		if (p->isIncoming()) color = QColor::fromRgb(255, 0, 0);
+		else color = QColor::fromRgb(0, 0, 255);
+		item->setForeground(color);
 	}
 	tableModel->appendRow(items);
 }
@@ -81,5 +84,5 @@ std::string TogetherPE::getDateTimeFormatted() {
 	struct tm  tstruct = *localtime(&now);
 	char       buf[80];
 	strftime(buf, sizeof(buf), "[%Y-%m-%d %X] ", &tstruct);
-	return buf;
+	return std::string(buf);
 }

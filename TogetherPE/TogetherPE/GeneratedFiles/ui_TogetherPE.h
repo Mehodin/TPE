@@ -73,7 +73,8 @@ public:
     {
         if (TogetherPEClass->objectName().isEmpty())
             TogetherPEClass->setObjectName(QString::fromUtf8("TogetherPEClass"));
-        TogetherPEClass->resize(678, 429);
+        TogetherPEClass->resize(678, 435);
+        TogetherPEClass->setBaseSize(QSize(700, 500));
         centralWidget = new QWidget(TogetherPEClass);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         gridLayout = new QGridLayout(centralWidget);
@@ -268,6 +269,8 @@ public:
         minimumSizeCheckbox->setText(QApplication::translate("TogetherPEClass", "Minimum size", nullptr));
         outgoingCheckbox->setText(QApplication::translate("TogetherPEClass", "Outgoing", nullptr));
         exampleFilter->setPlainText(QApplication::translate("TogetherPEClass", "outgoing(=1) incoming(=1) ip(=104.16.59.37) port(=80,8080,59) size(=0, 99999)\n"
+"\n"
+"Explanation:\n"
 "outgoing packets, yes.\n"
 "incoming packets, yes\n"
 "coming / going to ip 104.16...\n"

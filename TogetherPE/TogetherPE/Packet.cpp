@@ -6,38 +6,37 @@
 #include "Packet.h"
 
 
-PacketObject::PacketObject(bool incoming, QString ip, QString data, std::unique_ptr<Tins::RawPDU> rawPDU) {
-	this->incoming = incoming;
-	this->address = ip;
-	this->packetData = data;
-	this->rawPDU = std::move(rawPDU);
-}
+PacketObject::PacketObject(bool incoming, QString ip, QString data, std::unique_ptr<Tins::RawPDU> rawPDU)
+	: incoming{ incoming }, address{ std::move(ip) }, packetData{ std::move(data.toUpper()) }, rawPDU{ std::move(rawPDU) }
+{}
 
-PacketObject* PacketObject::fromRawPdu(const Tins::PDU& pdu) {
+PacketObject::PacketObject(const Tins::PDU& pdu)
+{
 	const Tins::IP& ip = pdu.rfind_pdu<Tins::IP>();
 	const Tins::TCP& tcp = pdu.rfind_pdu<Tins::TCP>();
 	const Tins::RawPDU& raw = tcp.rfind_pdu<Tins::RawPDU>();
-	const bool inc = ip.src_addr() != Tins::NetworkInterface::default_interface().addresses().ip_addr;
-	const QString ipAddress = inc ? QString::fromStdString(ip.src_addr().to_string() + ":" + std::to_string(tcp.sport())) : QString::fromStdString(ip.dst_addr().to_string() + ":" + std::to_string(tcp.dport()));
-	std::stringstream packetData;
+	incoming = ip.src_addr() != Tins::NetworkInterface::default_interface().addresses().ip_addr;
+	address = incoming ? QString::fromStdString(ip.src_addr().to_string() + ":" + std::to_string(tcp.sport())) : QString::fromStdString(ip.dst_addr().to_string() + ":" + std::to_string(tcp.dport()));
+	std::stringstream data;
 	for (auto each : raw.payload()) {
-		packetData << std::setfill('0') << std::setw(2) << std::hex << static_cast<int>(each) << " ";
+		data << std::setfill('0') << std::setw(2) << std::hex << static_cast<int>(each) << " ";
 	}
-	return new PacketObject{ inc, ipAddress, packetData.str().c_str(), std::make_unique<Tins::RawPDU>(raw) };
+	packetData = QString::fromStdString(data.str()).toUpper();
+	rawPDU = std::make_unique<Tins::RawPDU>(raw);
 }
 
-bool PacketObject::isIncoming() {
+bool PacketObject::isIncoming() const noexcept {
 	return incoming;
 }
 
-QString PacketObject::getAddress() {
+QString& PacketObject::getAddress() {
 	return address;
 }
 
-QString PacketObject::getPacketData() {
-	return packetData.toUpper();
+QString& PacketObject::getPacketData() {
+	return packetData;
 }
 
-Tins::RawPDU* PacketObject::getRawData() {
+Tins::RawPDU* PacketObject::getRawData() const noexcept { //KHeartz: const & noexcept
 	return rawPDU.get();
 }

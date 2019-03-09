@@ -4,20 +4,23 @@
 #include <tins/tins.h>
 #include <QThread>
 
-using namespace Tins;
 
 
 class TogetherPE;
 class PacketObject;
+
+class QRegeExp;
+class QString;
 
 class PacketLogger : public QThread {
 	Q_OBJECT
 
 public:
 	PacketLogger(TogetherPE*);
-	bool logPacket(const PDU&);
+	bool logPacket(const Tins::PDU&);
 	bool parseFilterString(PacketObject*);
-	Sniffer* getSniffer();
+	Tins::Sniffer* getSniffer();
+	QRegExp getRegex(const QString&);
 
 
 signals:
@@ -29,7 +32,7 @@ public slots:
 	void stopLogging();
 
 private:
-	std::unique_ptr<Sniffer> snf = nullptr;
+	std::unique_ptr<Tins::Sniffer> snf = nullptr;
 	TogetherPE* t;
 	int columnCount = 0;
 };

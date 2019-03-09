@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>678</width>
-    <height>429</height>
+    <height>435</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -45,6 +45,26 @@
           </property>
          </widget>
         </item>
+        <item row="1" column="0" colspan="2">
+         <widget class="QPushButton" name="startButton">
+          <property name="text">
+           <string>Start</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2" colspan="2">
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
         <item row="0" column="0" colspan="4">
          <widget class="QTableView" name="packetTable">
           <property name="sizePolicy">
@@ -67,26 +87,6 @@
           </property>
           <property name="wordWrap">
            <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="2" colspan="2">
-         <spacer name="horizontalSpacer">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="1" column="0" colspan="2">
-         <widget class="QPushButton" name="startButton">
-          <property name="text">
-           <string>Start</string>
           </property>
          </widget>
         </item>

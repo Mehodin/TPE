@@ -120,7 +120,10 @@
     <ClCompile Include="TogetherPE.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="TogetherPE.h" />
+    <QtMoc Include="TogetherPE.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\John_\Documents\lapinozz\boost_1_67_0;C:\Users\John_\Documents\GitHub\TPE\TogetherPE\include;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\John_\Documents\lapinozz\libtins\include;C:\Users\John_\Documents\lapinozz\WpdPack\Include;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;C:\Users\John_\Documents\lapinozz\boost_1_67_0;$(QTDIR)\include\QtWidgets</IncludePath>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="TogetherPE.ui" />
@@ -133,8 +136,8 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="packetLogger.h">
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\John_\Documents\GitHub\TPE\TogetherPE\include;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\John_\Documents\lapinozz\libtins\include;C:\Users\John_\Documents\lapinozz\WpdPack\Include;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\John_\Documents\lapinozz\boost_1_67_0;C:\Users\John_\Documents\GitHub\TPE\TogetherPE\include;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\John_\Documents\lapinozz\libtins\include;C:\Users\John_\Documents\lapinozz\WpdPack\Include;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;C:\Users\John_\Documents\lapinozz\boost_1_67_0;$(QTDIR)\include\QtWidgets</IncludePath>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

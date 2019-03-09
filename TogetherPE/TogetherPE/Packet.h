@@ -9,20 +9,13 @@ class PacketObject : public QObject {
 public:
 	PacketObject(bool, QString, QString, std::unique_ptr<Tins::RawPDU>);
 
-	~PacketObject() = default;
-	PacketObject(const PacketObject&) = default;
-	PacketObject(PacketObject&&) noexcept = default;
-	PacketObject& operator=(const PacketObject&) = default;
-	PacketObject& operator=(PacketObject&&) = default;
+	PacketObject(const Tins::PDU&);
 
+	bool isIncoming() const noexcept;
 
-	static PacketObject* fromRawPdu(const Tins::PDU&);
-
-	bool isIncoming();
-
-	QString getAddress();
-	QString getPacketData();
-	Tins::RawPDU* getRawData();
+	QString& getAddress();
+	QString& getPacketData();
+	Tins::RawPDU* getRawData() const noexcept;
 
 private:
 	bool incoming;

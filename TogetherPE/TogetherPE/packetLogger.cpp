@@ -4,22 +4,24 @@
 #include <cstdlib>
 #include <iostream>
 #include <thread>
+#include <QRegExp>
 
 #include "packetLogger.h"
 #include "Packet.h"
 
 
-PacketLogger::PacketLogger(TogetherPE* t) {
-	this->t = t;
+PacketLogger::PacketLogger(TogetherPE* t)
+	: t{ t }
+{
 	connect(t, &TogetherPE::stopSniffing, this, &PacketLogger::stopLogging);
 }
 
 void PacketLogger::process() {
-	auto controller = NetworkInterface::default_interface();
+	auto controller = Tins::NetworkInterface::default_interface();
 	try {
 		emit attemptLog(QString::fromStdString("Attempting to connect to " + controller.name() + " -> ") + QString::fromStdWString(controller.friendly_name()));
-		snf = std::make_unique<Sniffer>(controller.name());
-		snf->sniff_loop([this](const PDU& pdu) {
+		snf = std::make_unique<Tins::Sniffer>(controller.name());
+		snf->sniff_loop([this](const Tins::PDU& pdu) {
 			return logPacket(pdu);
 		});
 		emit attemptLog(QString::fromStdString("Connected to " + controller.name() + " -> ") + QString::fromStdWString(controller.friendly_name()));
@@ -34,9 +36,9 @@ void PacketLogger::stopLogging() {
 	snf->stop_sniff();
 }
 
-bool PacketLogger::logPacket(const PDU& pdu) {
+bool PacketLogger::logPacket(const Tins::PDU& pdu) {
 	auto currentColumn = columnCount;
-	auto* p = PacketObject::fromRawPdu(pdu);
+	auto* p = new PacketObject(pdu);
 	if (!t->ui.customFilterCheckbox->isChecked()) {
 		if (p->isIncoming() && !t->ui.incomingCheckbox->isChecked()) {
 			return true;
@@ -64,28 +66,27 @@ bool PacketLogger::logPacket(const PDU& pdu) {
 	return true;
 }
 
-Sniffer* PacketLogger::getSniffer() {
-	return std::move(snf.get());
+Tins::Sniffer* PacketLogger::getSniffer() {
+	return snf.get();
+}
+
+QRegExp PacketLogger::getRegex(const QString& regex) {
+	auto& filterText = t->ui.customFilterEdit->toPlainText();
+	QRegExp rex{ regex, Qt::CaseInsensitive };
+	rex.setMinimal(true);
+	rex.lastIndexIn(filterText);
+	return rex;
 }
 
 bool PacketLogger::parseFilterString(PacketObject* p) {
 	//outgoing(=1) incoming(=1) ip(=104.16.59.37) port(=80,8080,59) size(=0,99999)
 	auto& filterText = t->ui.customFilterEdit->toPlainText();
-	QRegExp outgoingRegex{ R"(outgoing\(=(.*)\))", Qt::CaseInsensitive };
-	outgoingRegex.setMinimal(true);
-	outgoingRegex.lastIndexIn(filterText);
-	QRegExp incomingRegex{ R"(incoming\(=(.*)\))", Qt::CaseInsensitive };
-	incomingRegex.setMinimal(true);
-	incomingRegex.indexIn(filterText);
-	QRegExp ipsRegex{ R"(ip\(=(.*)\))", Qt::CaseInsensitive };
-	ipsRegex.setMinimal(true);
-	ipsRegex.indexIn(filterText);
-	QRegExp portsRegex{ R"(port\(=(.*)\))", Qt::CaseInsensitive };
-	portsRegex.setMinimal(true);
-	portsRegex.indexIn(filterText);
-	QRegExp sizeRegex{ R"(size\(=(.*)\))", Qt::CaseInsensitive };
-	sizeRegex.setMinimal(true);
-	sizeRegex.indexIn(filterText);
+	QRegExp outgoingRegex = getRegex(R"(outgoing\(=(.*)\))");
+	QRegExp incomingRegex = getRegex(R"(incoming\(=(.*)\))");
+	QRegExp ipsRegex = getRegex(R"(ip\(=(.*)\))");
+	QRegExp portsRegex = getRegex(R"(port\(=(.*)\))");
+	QRegExp sizeRegex = getRegex(R"(size\(=(.*)\))");
+
 
 	if (outgoingRegex.captureCount()) {
 		if (outgoingRegex.capturedTexts().last() == "0" && !p->isIncoming()) return true;
